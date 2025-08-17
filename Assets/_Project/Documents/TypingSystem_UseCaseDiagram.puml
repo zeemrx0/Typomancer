@@ -1,0 +1,31 @@
+﻿@startuml
+
+left to right direction
+
+actor Player
+
+rectangle "Typing System" {
+  usecase "View expected text" as UC_ViewExpectedText
+  
+  usecase "View blurred text" as UC_ViewBlurredText
+  usecase "View reversed text" as UC_ViewReversedText
+  usecase "View text with blinking letters" as UC_ViewTextWithBlinkingLetters
+  usecase "View whole text" as UC_ViewWholeText
+  
+  Player -- UC_ViewExpectedText
+  
+  UC_ViewExpectedText <|-- UC_ViewWholeText
+  UC_ViewExpectedText <|-- UC_ViewTextWithBlinkingLetters
+  UC_ViewExpectedText <|-- UC_ViewReversedText
+  UC_ViewExpectedText <|-- UC_ViewBlurredText
+  
+  usecase "View expected sentence" as UC_ViewExpectedSentence
+  usecase "View expected word" as UC_ViewExpectedWord
+  usecase "View expected letter" as UC_ViewExpectedLetter
+  
+  UC_ViewExpectedText <|-- UC_ViewExpectedSentence
+  UC_ViewExpectedText <|-- UC_ViewExpectedWord
+  UC_ViewExpectedText <|-- UC_ViewExpectedLetter
+}
+
+@enduml

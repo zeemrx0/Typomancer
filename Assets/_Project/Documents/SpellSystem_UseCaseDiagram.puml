@@ -1,0 +1,19 @@
+﻿@startuml
+
+left to right direction
+
+actor Player
+
+rectangle "Spell System" {
+  usecase "Activate spell" as UC_ActivateSpell
+  usecase "Maintain spell" as UC_MaintainSpell
+  usecase "Deactivate spell" as UC_DeactivateSpell
+  
+  Player -- UC_ActivateSpell
+  Player -- UC_DeactivateSpell
+
+  UC_ActivateSpell <.. UC_MaintainSpell : <<extends>>
+  UC_ActivateSpell <.. UC_DeactivateSpell : <<includes>>
+}
+
+@enduml
