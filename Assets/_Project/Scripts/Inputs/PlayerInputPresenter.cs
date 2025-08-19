@@ -6,6 +6,8 @@ namespace LNE.Inputs
 {
     public class PlayerInputPresenter : MonoBehaviour
     {
+        public event Action<bool> JumpInputChanged;
+
         private PlayerInputAction _playerInputAction;
         private PlayerInputAction.CharacterActions _characterActions;
         private PlayerInputAction.SpellActions _spellActions;
@@ -29,10 +31,22 @@ namespace LNE.Inputs
         {
             // Character actions
             _characterActions.ToggleSpell.performed += OnToggleSpellPerformed;
+            _characterActions.Jump.performed += OnJumpPerformed;
+            _characterActions.Jump.canceled += OnJumpCanceled;
 
             // Spell actions
-            _spellActions.SubmitWord.performed += OnSubmitWordPerformed;
+            _spellActions.SubmitWord.started += OnSubmitWordPerformed;
             _spellActions.SubmitWordAndEndSpell.performed += OnSubmitWordAndEndSpellPerformed;
+        }
+
+        private void OnJumpPerformed(InputAction.CallbackContext context)
+        {
+            JumpInputChanged?.Invoke(true);
+        }
+
+        private void OnJumpCanceled(InputAction.CallbackContext context)
+        {
+            JumpInputChanged?.Invoke(false);
         }
 
         private void OnToggleSpellPerformed(InputAction.CallbackContext context)

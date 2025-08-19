@@ -110,6 +110,15 @@ namespace LNE.Inputs
                     ""processors"": """",
                     ""interactions"": ""Tap"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""48ec02d4-d038-4366-930c-03521b340ea1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -231,6 +240,17 @@ namespace LNE.Inputs
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""ToggleSpell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8347cb4c-b99c-4e7d-aa97-5c4b24aef947"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -824,6 +844,7 @@ namespace LNE.Inputs
             m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
             m_Character_Move = m_Character.FindAction("Move", throwIfNotFound: true);
             m_Character_ToggleSpell = m_Character.FindAction("ToggleSpell", throwIfNotFound: true);
+            m_Character_Jump = m_Character.FindAction("Jump", throwIfNotFound: true);
             // Spell
             m_Spell = asset.FindActionMap("Spell", throwIfNotFound: true);
             m_Spell_SubmitWord = m_Spell.FindAction("SubmitWord", throwIfNotFound: true);
@@ -924,6 +945,7 @@ namespace LNE.Inputs
         private List<ICharacterActions> m_CharacterActionsCallbackInterfaces = new List<ICharacterActions>();
         private readonly InputAction m_Character_Move;
         private readonly InputAction m_Character_ToggleSpell;
+        private readonly InputAction m_Character_Jump;
         /// <summary>
         /// Provides access to input actions defined in input action map "Character".
         /// </summary>
@@ -943,6 +965,10 @@ namespace LNE.Inputs
             /// Provides access to the underlying input action "Character/ToggleSpell".
             /// </summary>
             public InputAction @ToggleSpell => m_Wrapper.m_Character_ToggleSpell;
+            /// <summary>
+            /// Provides access to the underlying input action "Character/Jump".
+            /// </summary>
+            public InputAction @Jump => m_Wrapper.m_Character_Jump;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -975,6 +1001,9 @@ namespace LNE.Inputs
                 @ToggleSpell.started += instance.OnToggleSpell;
                 @ToggleSpell.performed += instance.OnToggleSpell;
                 @ToggleSpell.canceled += instance.OnToggleSpell;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
 
             /// <summary>
@@ -992,6 +1021,9 @@ namespace LNE.Inputs
                 @ToggleSpell.started -= instance.OnToggleSpell;
                 @ToggleSpell.performed -= instance.OnToggleSpell;
                 @ToggleSpell.canceled -= instance.OnToggleSpell;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
             }
 
             /// <summary>
@@ -1361,6 +1393,13 @@ namespace LNE.Inputs
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnToggleSpell(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Jump" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnJump(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Spell" which allows adding and removing callbacks.

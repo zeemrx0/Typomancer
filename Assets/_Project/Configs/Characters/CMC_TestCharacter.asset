@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ade8e89a284dc6ab5f482e3c2f5d94, type: 3}
+  m_Name: CMC_TestCharacter
+  m_EditorClassIdentifier: 
+  <MovementSpeed>k__BackingField: 7
+  <AirControlRate>k__BackingField: 2
+  <AirFriction>k__BackingField: 0.5
+  <GroundFriction>k__BackingField: 100
+  <Gravity>k__BackingField: 30
+  <SlideGravity>k__BackingField: 5
+  <SlopeLimit>k__BackingField: 30
+  <UseLocalMomentum>k__BackingField: 0
+  <JumpSpeed>k__BackingField: 10
+  <JumpDuration>k__BackingField: 0.2

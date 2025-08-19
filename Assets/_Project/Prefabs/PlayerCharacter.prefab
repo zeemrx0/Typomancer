@@ -14,14 +14,13 @@ GameObject:
   - component: {fileID: 1169446219560474335}
   - component: {fileID: 9117366991738314205}
   - component: {fileID: 8993152893075971871}
-  - component: {fileID: 4166513073971721494}
-  - component: {fileID: 6337902885280464846}
   - component: {fileID: 4331600218461076645}
-  - component: {fileID: 2240262753729940417}
   - component: {fileID: 1891847876870882117}
   - component: {fileID: -5963389932029940531}
   - component: {fileID: -3309296310151945256}
   - component: {fileID: 746656816019635389}
+  - component: {fileID: 5328789468529236547}
+  - component: {fileID: -6150324465687475707}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -146,10 +145,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &8993152893075971871
 CapsuleCollider:
@@ -170,104 +169,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.25
+  m_Height: 1.4560001
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &4166513073971721494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494124471729420699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4cf32970eac4c9498a96ba8d86aad38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationMode: 1
-  _rotationRate: 540
-  _startingMovementMode: 1
-  _maxWalkSpeed: 5
-  _minAnalogWalkSpeed: 0
-  _maxAcceleration: 20
-  _brakingDecelerationWalking: 20
-  _groundFriction: 8
-  _canEverCrouch: 1
-  _crouchedHeight: 1.25
-  _unCrouchedHeight: 2
-  _maxWalkSpeedCrouched: 3
-  _maxFallSpeed: 40
-  _brakingDecelerationFalling: 0
-  _fallingLateralFriction: 0.3
-  _airControl: 0.3
-  _canEverJump: 1
-  _canJumpWhileCrouching: 1
-  _jumpMaxCount: 1
-  _jumpImpulse: 5
-  _jumpMaxHoldTime: 0
-  _jumpMaxPreGroundedTime: 0
-  _jumpMaxPostGroundedTime: 0
-  _maxFlySpeed: 10
-  _brakingDecelerationFlying: 0
-  _flyingFriction: 1
-  _maxSwimSpeed: 3
-  _brakingDecelerationSwimming: 0
-  _swimmingFriction: 0
-  _buoyancy: 1
-  _gravity: {x: 0, y: -9.81, z: 0}
-  _gravityScale: 1
-  _useRootMotion: 0
-  _impartPlatformMovement: 0
-  _impartPlatformRotation: 0
-  _impartPlatformVelocity: 0
-  _enablePhysicsInteraction: 0
-  _applyPushForceToCharacters: 0
-  _applyStandingDownwardForce: 0
-  _mass: 1
-  _pushForceScale: 1
-  _standingDownwardForceScale: 1
-  _camera: {fileID: 0}
---- !u!114 &6337902885280464846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494124471729420699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a5e05c5b0509214d911dd005a610d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _planeConstraint: 0
-  _rootTransform: {fileID: 0}
-  _rootTransformOffset: {x: 0, y: 0, z: 0}
-  _radius: 0.5
-  _height: 2
-  _slopeLimit: 45
-  _stepOffset: 0.45
-  _perchOffset: 0.5
-  _perchAdditionalHeight: 0.4
-  _slopeLimitOverride: 0
-  _useFlatTop: 0
-  _useFlatBaseForGroundChecks: 0
-  _collisionLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  _triggerInteraction: 1
-  _advanced:
-    minMoveDistance: 0
-    maxMovementIterations: 5
-    maxDepenetrationIterations: 1
-    useFastGeomNormalPath: 0
-    enablePhysicsInteraction: 0
-    allowPushCharacters: 0
-    impartPlatformMovement: 0
-    impartPlatformRotation: 0
-    impartPlatformVelocity: 0
-  _minSlopeLimit: 0.7069833
+  m_Center: {x: 0, y: 1.1101999, z: 0}
 --- !u!114 &4331600218461076645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,28 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec2ab4dd8214b3a96f75817227b248d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2240262753729940417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494124471729420699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 971a0c453d044c778fe822abf8a30a5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isSetup: 0
-  _prefabId: -2147483648
-  _componentIndex: -2147483648
-  _shouldBePooled: 0
-  _parent: {fileID: 0}
-  _invertedPathToNearestParent: 
-  _directChildren: []
-  _networkRules: {fileID: 0}
-  _visitiblityRules: {fileID: 0}
-  _config: {fileID: 11400000, guid: 5001bd2bc5bb5ca438d31ef26df861b7, type: 2}
 --- !u!114 &1891847876870882117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +273,39 @@ MonoBehaviour:
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
   _config: {fileID: 11400000, guid: 901b045c84a9e9f4d891cde9b08b3cca, type: 2}
+--- !u!114 &5328789468529236547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494124471729420699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf13662dd885418f803b0d6d6eca21fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterMovementConfig: {fileID: 11400000, guid: 8b53f8879b61066458058767df82fe36, type: 2}
+  _isDebugging: 0
+  _stepHeightRatio: 0.2
+  _colliderHeight: 1.82
+  _colliderThickness: 0.5
+  _colliderOffset: {x: 0, y: 0.53, z: 0}
+--- !u!114 &-6150324465687475707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494124471729420699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a767ffc726f4c2580f411245d8919a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInputPresenter: {fileID: 4331600218461076645}
+  _characterMovementController: {fileID: 5328789468529236547}
+  _cameraTransform: {fileID: 0}
 --- !u!1 &6808197992736108202
 GameObject:
   m_ObjectHideFlags: 0
